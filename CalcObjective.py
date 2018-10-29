@@ -113,21 +113,6 @@ def analyze(individual,l1,l2,peaks):
         err = 1000000000 
         trans = 0.0
         return (err,trans) 
- #       while True:
- #           print "WARNING:RERUNNING LUMERICAL.."
- #           run_dir,index = run_lumerical(l1,l2,individual) 
-
- #           
- #           try: 
- #               infile = open(run_dir + 
- #                   "/phase/phase_"+str(index)+".dat","r")
- #               break
- #           except: 
- #               continue
-    #numfile = open("ndisk.dat", "r")
-    #peakfile = open(run_dir+ "peak.dat","r")
-    #ndisk = numfile.readline()
-    #ndisk = float(ndisk)
     data = []
     for line in infile:
         col = line.split()
