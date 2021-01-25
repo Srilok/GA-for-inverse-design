@@ -1,7 +1,7 @@
 #!/home/share/cnm50256/bin/miniconda2/bin/python
 """
 Srilok: GA based on DEAP to optimize focusing efficiency of flat lenses (1D probelm) 
-Build on Henry's code for force field fitting 
+Built on Henry's code for force field fitting 
 """
 import sys
 from datetime import datetime
