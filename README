@@ -1,6 +1,5 @@
-#############################################################################
-Genetic Algorithm code for optimization of focusing efficiency of flat lenses 
-#############################################################################
+# Genetic Algorithm code for optimization of focusing efficiency of flat lenses 
+
 
 The code is interfaced with Lumerical FDTD solver 
 
