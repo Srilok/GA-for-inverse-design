@@ -1,0 +1,13 @@
+# mesh
+addmesh;
+#Rep
+#Rep
+#Rep 
+set("y",0);
+set("y span",sidey);
+set("z",0);
+set("z span",thickness);
+set("set maximum mesh step",1);
+#Rep
+#Rep 
+#Rep 

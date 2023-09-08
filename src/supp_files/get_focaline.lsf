@@ -1,0 +1,61 @@
+# Phase along the line
+wavefront_Ey=getdata("phaseline","Ey");
+phase_Ey=angle(wavefront_Ey);
+intensity_Ey=abs(wavefront_Ey)^2;
+u_Ey=unwrap(phase_Ey);
+format long;
+
+cross_Ex=getdata("cross","Ex");
+cross_Ey=getdata("cross","Ey");
+cross_Ez=getdata("cross","Ez");
+cross_intensity= abs(cross_Ex)^2 + abs(cross_Ey)^2 + abs(cross_Ez)^2;
+#str = num2str(length(cross_intensity));
+#write("/home/SHARE/cnm50256/Disk_opt/1D/Foc_eff_Calc/Lumerical_runs/phase/cross_2222.dat",str);
+cross_x = getdata("cross","x");
+cross_z = getdata("cross","z");
+
+for(i=1:length(cross_x)) { 
+        if(abs(cross_x(i)) < 1.e-8) { 
+                index_x = i;
+                                }
+                        }
+
+for(i=1:length(cross_z)){ 
+    if(cross_z(i) < 8.0e-6){ 
+        index_z = i;
+                            }
+                        }
+
+line_scan = cross_intensity(index_x-3:index_x+3,index_z:length(cross_z));
+obj = max(line_scan);
+?obj;
+
+for(i=1:length(cross_z)) {
+    if(abs(cross_intensity(index_x,i) - obj) < 1.e-2){ 
+        focal_line = i; 
+                                                    }
+                    } 
+
+
+
+
+
+transeff=transmission("trans");
+
+str = "# Trans: "+ num2str(transeff)+" ; " + "Max Intensity: " + num2str(obj);
+#write("focaline.dat",str);
+#Rep
+
+#for(i=1:length(line_scan)){ 
+#    str = num2str(line_scan(i));
+#    write("test.dat",str);
+#}
+
+
+for (i=1:length(cross_x) ) {
+        str= num2str(cross_x(i))+" "+num2str(cross_intensity(i,focal_line)) + " " + num2str(intensity_Ey(i)) + " " + num2str(phase_Ey(i)) + " " + num2str(u_Ey(i));
+        #write("phase_test.dat",str);
+        #write("focaline.dat",str);
+        #Rep
+}
+

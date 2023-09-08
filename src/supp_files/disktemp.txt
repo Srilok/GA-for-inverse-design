@@ -1,0 +1,11 @@
+addcircle;
+set("name","TiO2 nanodisc");
+#Rep
+#Rep
+#Rep
+set("z",0);
+set("z span",thickness);
+set("index",2.59);
+set("override mesh order from material database",1);
+set("mesh order",1);
+
