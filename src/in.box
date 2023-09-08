@@ -1,0 +1,5 @@
+10 30 #ndisk_min ndisk_max 
+50e-9 100e-9 # Pitch_min #Pitch_max
+0.0 6.0e-6 #xMin xMax 
+0.0 310e-9 #yMin yMax  
+75e-9 150e-9 #rMin rMax 
